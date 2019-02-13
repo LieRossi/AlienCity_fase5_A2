@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 H;
     private Vector3 movement;
 
-    public GameObject p1;
-    public GameObject p2;
+    //public GameObject p1;
+    //public GameObject p2;
 
 
 
@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetTrigger("Parado");
 
-        p1.gameObject.GetComponent<Animation>().Stop();
-        p2.gameObject.GetComponent<Animation>().Stop();
+        //p1.gameObject.GetComponent<Animation>().Stop();
+        //p2.gameObject.GetComponent<Animation>().Stop();
     }
 
     void Update()
@@ -101,14 +101,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /*void BotaoPular()
+    public void BotaoPular()
     {
-        if (Input.GetButtonDown("BotaoPular"))
+        if (!jump)
         {
             anim.SetTrigger("Pula");
             jump = true;
         }
-    }*/
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -119,8 +119,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("triggerplat"))
         {
-            p1.gameObject.GetComponent<Animation>().Play();
-            p2.gameObject.GetComponent<Animation>().Play();
+            Handheld.Vibrate();
+            // p1.gameObject.GetComponent<Animation>().Play();
+            //p2.gameObject.GetComponent<Animation>().Play();
 
         }
     }
