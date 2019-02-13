@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 H;
     private Vector3 movement;
 
+    public GameObject p1;
+    public GameObject p2;
+
 
 
     void Start()
@@ -31,6 +34,9 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         anim.SetTrigger("Parado");
+
+        p1.gameObject.GetComponent<Animation>().Stop();
+        p2.gameObject.GetComponent<Animation>().Stop();
     }
 
     void Update()
@@ -109,6 +115,13 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("pedra") || (other.gameObject.CompareTag("trigger")))
         {
             Handheld.Vibrate();
+        }
+
+        if (other.gameObject.CompareTag("triggerplat"))
+        {
+            p1.gameObject.GetComponent<Animation>().Play();
+            p2.gameObject.GetComponent<Animation>().Play();
+
         }
     }
 
