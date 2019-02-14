@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AtivaEstalag : MonoBehaviour {
-   /* public GameObject GrupoEstalag;
+    public GameObject GrupoEstalag;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +19,8 @@ public class AtivaEstalag : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
             Handheld.Vibrate();
-            //GrupoEstalag.gameObject.GetComponent<Rigidbody>.use gravity = true;
+            GrupoEstalag.gameObject.GetComponent<Rigidbody>().useGravity = true;
             
         }
-    }*/
+    }
 }

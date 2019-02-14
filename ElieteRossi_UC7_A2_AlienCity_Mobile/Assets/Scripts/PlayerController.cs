@@ -24,9 +24,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 H;
     private Vector3 movement;
 
-    //public GameObject p1;
-    //public GameObject p2;
-
+    
 
 
     void Start()
@@ -35,8 +33,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetTrigger("Parado");
 
-        //p1.gameObject.GetComponent<Animation>().Stop();
-        //p2.gameObject.GetComponent<Animation>().Stop();
+        
     }
 
     void Update()
@@ -112,28 +109,20 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("pedra") || (other.gameObject.CompareTag("trigger")))
+        if (other.gameObject.CompareTag("pedra")) 
         {
             Handheld.Vibrate();
         }
 
-        if (other.gameObject.CompareTag("triggerplat"))
+        if (other.gameObject.CompareTag("trigger"))
         {
             Handheld.Vibrate();
-            // p1.gameObject.GetComponent<Animation>().Play();
-            //p2.gameObject.GetComponent<Animation>().Play();
+            
 
         }
     }
 
-    /*void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("trigger"))
-        {
-            Handheld.Vibrate();
-        }
-
-    }*/
+    
 }
 
 
